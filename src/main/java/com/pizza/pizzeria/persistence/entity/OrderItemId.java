@@ -8,15 +8,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
-@NoArgsConstructor
 @AllArgsConstructor
 public class OrderItemId implements Serializable {
 
 	private Integer idOrder;
 	private Integer idItem;
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -34,4 +30,21 @@ public class OrderItemId implements Serializable {
 	public int hashCode() {
 		return Objects.hash(idItem, idOrder);
 	}
+
+	public Integer getIdOrder() {
+		return idOrder;
+	}
+
+	public void setIdOrder(Integer idOrder) {
+		this.idOrder = idOrder;
+	}
+
+	public Integer getIdItem() {
+		return idItem;
+	}
+
+	public void setIdItem(Integer idItem) {
+		this.idItem = idItem;
+	}
+
 }

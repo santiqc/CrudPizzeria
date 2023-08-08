@@ -10,13 +10,10 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "customer")
-@Getter
-@Setter
-@NoArgsConstructor
 public class CustomerEntity {
 
 	@Id
-	@Column(name = "id_customer", length = 15,nullable = false)
+	@Column(name = "id_customer", length = 15, nullable = false)
 	private String idCustomer;
 
 	@Column(nullable = false, length = 60)
@@ -30,5 +27,45 @@ public class CustomerEntity {
 
 	@Column(name = "phone_number", length = 20)
 	private String phoneNumber;
+
+	public String getIdCustomer() {
+		return idCustomer;
+	}
+
+	public void setIdCustomer(String idCustomer) {
+		this.idCustomer = idCustomer;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
 
 }

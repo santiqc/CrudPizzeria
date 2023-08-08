@@ -36,6 +36,26 @@ public class PizzaController {
 		return ResponseEntity.ok(this.pizzaService.getById(idPizza));
 	}
 
+	@GetMapping("/available")
+	public ResponseEntity<List<PizzaEntity>> getAvailable() {
+		return ResponseEntity.ok(this.pizzaService.getAvailable());
+	}
+
+	@GetMapping("/available/{name}")
+	public ResponseEntity<List<PizzaEntity>> getByName(@PathVariable String name) {
+		return ResponseEntity.ok(this.pizzaService.getByName(name));
+	}
+
+	@GetMapping("/with/{description}")
+	public ResponseEntity<List<PizzaEntity>> getWith(@PathVariable String description) {
+		return ResponseEntity.ok(this.pizzaService.getWith(description));
+	}
+
+	@GetMapping("/without/{description}")
+	public ResponseEntity<List<PizzaEntity>> getWithout(@PathVariable String description) {
+		return ResponseEntity.ok(this.pizzaService.getWithout(description));
+	}
+
 	@PostMapping
 	public ResponseEntity<PizzaEntity> add(@RequestBody PizzaEntity pizzaEntity) {
 		if (pizzaEntity.getIdPizza() == null || this.pizzaService.existPizza(pizzaEntity.getIdPizza())) {
